@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Login Facebook</title>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+					$.getJSON( "/appsFriends", function( json ) {
+						var friends = jQuery.parseJSON(json)
+						
+						for(var i in friends){
+								if(friends[i].fullName != "Usuário do Facebook"){
+								$("#iptnamefriends").append("<option>"+friends[i].fullName+"</option>")						
+								}
+								
+						}						
+					});
+			});
+		</script>
+	</head>
+	<body>
+		<form action="/apimessage" method="post">
+			<table>
+				<tr>
+					<td>Escolha os amigos para enviar mensagem::</td>					
+				</tr>
+				<tr>
+					<td><select multiple name="iptnamefriends" id="iptnamefriends" style="width: 200px; height:200px"></select></td>
+				</tr>
+				<tr>
+					<td>
+						<textarea name="iptSendMessage" rows="4" cols="50"></textarea>				
+					</td>
+				</tr>
+				<tr>
+					<td><button type="submit">Send</button></td>
+				</tr>
+			</table>
+		</form>
+		
+	</body>
+</html>
