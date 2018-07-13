@@ -1,0 +1,16 @@
+{
+  "name": "node_express_facebook_html_js",
+  "version": "1.0.0",
+  "description": "Autentication and Send Message for Facebook",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Milhousepaulojean",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "facebook-chat-api": "^1.6.0"
+  }
+}
